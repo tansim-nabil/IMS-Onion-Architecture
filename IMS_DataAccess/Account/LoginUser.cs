@@ -7,18 +7,12 @@ using System.Threading.Tasks;
 
 namespace IMS_DataAccess.Account
 {
-    public class User : BaseEntity
+    public class LoginUser : BaseEntity
     {
-        [Key]
-        public int Id { get; set; }
-
-        public string FirstName { get; set; }
-
-        public string LastName { get; set; }
-
+        [Required(ErrorMessage = "Username is required")]
         public string UserName { get; set; }
-        public string Email { get; set; }
-        public long PhoneNumber { get; set; }
+
+        [Required(ErrorMessage = "Password is required")]
         public string Password { get; set; }
     }
 }
